@@ -34,10 +34,6 @@ public class PlayerMovement : MonoBehaviour
         Rb.rotation = angle;
         #endregion
 
-        if (Input.GetKey(KeyCode.LeftShift)) 
-        {
-            speed = Speed * 1.5f;
-        }
         if (Input.GetKeyUp(KeyCode.LeftShift)) 
         {
             speed = Speed;

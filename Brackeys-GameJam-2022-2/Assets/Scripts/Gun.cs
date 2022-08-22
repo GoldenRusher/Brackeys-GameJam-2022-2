@@ -6,8 +6,7 @@ public class Gun : MonoBehaviour
 {
     [Header("Gun Setup")]
     public bool FullAuto = false;
-    public bool RayCast;
-    public GameObject Player;
+    GameObject Player;
 
     [Header("Gun Stats")]
     public float timeBetweenShots = 0.1f;
@@ -20,11 +19,10 @@ public class Gun : MonoBehaviour
     public PlayerInventory PI;
 
 
-    Transform FirePoint;
-    GunInfo GI;
-    public LayerMask StopRay;
+    public Transform FirePoint;
 
     [Header("Prefab Shot")]
+    public GameObject ShotEffect;
     public GameObject Bullet;
     public float BulletSpeed;
     public float BulletTime;
@@ -32,9 +30,9 @@ public class Gun : MonoBehaviour
     RaycastHit2D hit;
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         timer = timeBetweenShots;
-        GI = GetComponent<GunInfo>();
-        FirePoint = GI.Firepoint;
     }
 
     void Update()
@@ -93,6 +91,8 @@ public class Gun : MonoBehaviour
         Rigidbody2D rb = a.GetComponent<Rigidbody2D>();
         rb.AddForce(BulletSpeed * -(new Vector2(FirePoint.up.x + RandomRecoil, FirePoint.up.y + RandomRecoil)), ForceMode2D.Impulse);
 
+        Instantiate(ShotEffect, FirePoint.position, Player.transform.localRotation);
+
         Vector2 MousePos = Input.mousePosition;
         MousePos = Camera.main.ScreenToWorldPoint(MousePos);
         Vector2 LookDir = rb.position - MousePos;
@@ -100,7 +100,7 @@ public class Gun : MonoBehaviour
         float angle = Mathf.Atan2(LookDir.y, LookDir.x) * Mathf.Rad2Deg;
 
         rb.rotation = angle;
-
+        
        
         a.GetComponent<Bullet>().dir = Player.transform.localRotation.eulerAngles;
 

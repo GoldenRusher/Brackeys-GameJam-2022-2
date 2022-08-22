@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float BulletDamage;
+    public bool ReapThrough;
+
     public GameObject[] Impacts;
     public GameObject[] Blood;
 
@@ -15,11 +18,15 @@ public class Bullet : MonoBehaviour
         {
             GameObject a = Instantiate(Impacts[0], transform.position, Quaternion.Euler(dir));
             Destroy(a, 5f);
-            Destroy(this.gameObject);
+            if (!ReapThrough)
+            {
+                Destroy(this.gameObject);
+            }
         }
         else if (collision.transform.CompareTag("Enemy"))
         {
             GameObject a = Instantiate(Impacts[1], transform.position, Quaternion.Euler(dir));
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(BulletDamage);
 
             int rand = Random.Range(1, 4);
             if(rand == 1) 
@@ -28,11 +35,15 @@ public class Bullet : MonoBehaviour
                 GameObject b = Instantiate(Blood[rand], transform.position, Quaternion.Euler(transform.localRotation.eulerAngles));
                 Destroy(b, 200f);
             }
-            
-            
 
+
+
+            if (!ReapThrough) 
+            {
+                Destroy(this.gameObject);
+            }
             Destroy(a, 5f);
-            Destroy(this.gameObject);
+            
         }
     }
 
@@ -42,11 +53,15 @@ public class Bullet : MonoBehaviour
         {
             GameObject a = Instantiate(Impacts[0], transform.position, Quaternion.Euler(dir));
             Destroy(a, 5f);
-            Destroy(this.gameObject);
+            if (!ReapThrough)
+            {
+                Destroy(this.gameObject);
+            }
         }
         else if (collision.transform.CompareTag("Enemy"))
         {
             GameObject a = Instantiate(Impacts[1], transform.position, Quaternion.Euler(dir));
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(BulletDamage);
 
             int rand = Random.Range(1, 4);
             if (rand == 1)
@@ -59,7 +74,10 @@ public class Bullet : MonoBehaviour
 
 
             Destroy(a, 5f);
-            Destroy(this.gameObject);
+            if (!ReapThrough)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
