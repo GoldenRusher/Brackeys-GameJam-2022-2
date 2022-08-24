@@ -11,8 +11,10 @@ public class SettingsMenu : MonoBehaviour
     public float SFXVol;
     public float MusicVol;
     public float MasterVol;
+    public float ShakeInt;
     public bool fullScreen = true;
 
+    public Slider Shake;
     public Slider SFX;
     public Slider Music;
     public Slider Master;
@@ -23,6 +25,7 @@ public class SettingsMenu : MonoBehaviour
         SFXVol = PlayerPrefs.GetFloat("SFXVolume");
         MusicVol = PlayerPrefs.GetFloat("MusicVolume");
         MasterVol = PlayerPrefs.GetFloat("MasterVolume");
+        ShakeInt = PlayerPrefs.GetFloat("ShakeIntensity");
         if (PlayerPrefs.GetInt("FullScreen") == 1) 
         {
             fullScreen = true;
@@ -35,6 +38,7 @@ public class SettingsMenu : MonoBehaviour
         SFX.value = SFXVol;
         Music.value = MusicVol;
         Master.value = MasterVol;
+        Shake.value = ShakeInt;
         fsToggle.isOn = fullScreen;
 
         Main.SetFloat("SFXvol", SFXVol);
@@ -58,7 +62,11 @@ public class SettingsMenu : MonoBehaviour
        Main.SetFloat("MasterVol", volume);
        MasterVol = volume;
     }
-
+    public void SetShakeInt(float Int) 
+    {
+        PlayerPrefs.SetFloat("ShakeIntensity", Int);
+        ShakeInt = Int;
+    }
     public void FullScreen(bool FS) 
     {
         Screen.fullScreen = FS;

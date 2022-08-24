@@ -8,10 +8,14 @@ public class EnemyHealth : MonoBehaviour
     public float currentHealth;
     public GameObject Bleeding;
 
+    public float DifficultyMultiplier = 1;
+
+    DropItems DI;
 
     void Start()
     {
-        currentHealth = MaxHealth;
+        DI = GetComponent<DropItems>();
+        currentHealth = MaxHealth * (DifficultyMultiplier * 0.75f);
     }
 
     void Update()
@@ -31,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die() 
     {
+        DI.Dropitems();
         Destroy(this.gameObject);
     }
 

@@ -8,7 +8,9 @@ public class GunSelector : MonoBehaviour
     PlayerSpriteController Psc;
     PlayerInventory PI;
     public GameObject CurrentGun;
-    bool UsingGun = false;
+
+    [HideInInspector]
+    public bool UsingGun = false;
     public Text AmmoText;
     public GameObject AmmoDisplay;
     public Text AmmoSupply;

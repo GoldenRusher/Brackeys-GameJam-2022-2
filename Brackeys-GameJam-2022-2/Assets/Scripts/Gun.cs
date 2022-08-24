@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
     [Header("Gun Setup")]
     public bool FullAuto = false;
     GameObject Player;
+    public AudioSource AS;
 
     [Header("Gun Stats")]
     public float timeBetweenShots = 0.1f;
@@ -86,6 +87,8 @@ public class Gun : MonoBehaviour
     {
         currentAmmo--;
         float RandomRecoil = Random.Range(-RecoilAmount, RecoilAmount);
+        AS.Play();
+        CinemachineShake.Instance.ShakeCamera(3 * PlayerPrefs.GetFloat("ShakeIntensity"), 0.5f);
 
         GameObject a = Instantiate(Bullet,FirePoint.position,Quaternion.identity);
         Rigidbody2D rb = a.GetComponent<Rigidbody2D>();

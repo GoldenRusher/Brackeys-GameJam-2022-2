@@ -38,5 +38,24 @@ public class Interractable : MonoBehaviour
                 InterractShowCase.SetActive(false);
             }
         }
+        if(!IsWB)
+        {
+            if (Vector2.Distance(Player.transform.position, transform.position) <= Distance && !isGenerator)
+            {
+                InterractShowCase.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    Player.GetComponent<PlayerMovement>().enabled = false;
+                    gun.SetActive(false);
+                    TurnOn.SetActive(true);
+                }
+            }
+            else
+            {
+                InterractShowCase.SetActive(false);
+            }
+        }
     }
 }
