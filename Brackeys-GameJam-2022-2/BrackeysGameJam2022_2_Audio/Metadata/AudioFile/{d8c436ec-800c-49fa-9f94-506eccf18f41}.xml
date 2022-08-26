@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d8c436ec-800c-49fa-9f94-506eccf18f41}">
+		<property name="assetPath">
+			<value>SniperFire2 [2022-08-25 211852].wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.8750113378684807</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dbe14b9e-2265-44b8-8770-e274f142bf5d}</destination>
+		</relationship>
+	</object>
+</objects>

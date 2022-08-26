@@ -16,9 +16,6 @@ public class PlayerMovement : MonoBehaviour
     Vector2 MousePos;
     Vector2 LookDir;
 
-    public AudioSource WalkingSound;
-    public AudioClip[] FootstepSounds;
-
     void Start()
     {
         speed = Speed;
@@ -46,18 +43,7 @@ public class PlayerMovement : MonoBehaviour
         //Movement
         Rb.velocity = MoveInput() * speed;
 
-        /*
-        if(MoveInput() != Vector2.zero && !WalkingSound.isPlaying) 
-        {
-            int Rand = Random.Range(0, FootstepSounds.Length);
-            WalkingSound.clip = FootstepSounds[Rand];
 
-            WalkingSound.pitch = Random.Range(0.8f, 1.2f);
-            WalkingSound.volume = Random.Range(0.05f, 0.15f);
-
-            WalkingSound.Play();
-        }
-        */
     }
 
     Vector2 MoveInput() 

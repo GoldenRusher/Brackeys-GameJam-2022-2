@@ -1,24 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Gun : MonoBehaviour
 {
     [Header("Gun Setup")]
     public bool FullAuto = false;
     GameObject Player;
-    public AudioSource AS;
+    
 
     [Header("Gun Stats")]
     public float timeBetweenShots = 0.1f;
     float timer;
     public float RecoilAmount = 0.05f;
+    public float ShakeAmount;
+    public int AmmoUsage;
+
 
     [Header("Ammo")]
     public int AmmoCapacity;
     public int currentAmmo;
     public PlayerInventory PI;
-
 
     public Transform FirePoint;
 
@@ -28,7 +31,18 @@ public class Gun : MonoBehaviour
     public float BulletSpeed;
     public float BulletTime;
 
+
+    
+
     RaycastHit2D hit;
+
+    public FMODUnity.EventReference GunShot;
+    public FMODUnity.EventReference NoAmmo;
+    public FMODUnity.EventReference ReloadSound;
+
+    public int GunType;
+    public FMOD.Studio.EventInstance Gunshot;
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -38,6 +52,8 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+        
+
         timer -= Time.deltaTime;
         if(currentAmmo > 0) 
         {
@@ -58,12 +74,17 @@ public class Gun : MonoBehaviour
                 }
             }
         }
+        else if(Input.GetButton("Fire1"))
+        {
+            FMODUnity.RuntimeManager.PlayOneShotAttached(NoAmmo, gameObject);
+        }
 
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             if(PI.Ammo > 0) 
             {
                 Reload();
+                FMODUnity.RuntimeManager.PlayOneShotAttached(ReloadSound, gameObject);
             }
         }
     }
@@ -85,10 +106,21 @@ public class Gun : MonoBehaviour
 
     public void PrefabShot()
     {
-        currentAmmo--;
+        Gunshot = FMODUnity.RuntimeManager.CreateInstance(GunShot);
+        Gunshot.setParameterByName("GunType", GunType);
+        Gunshot.start();
+
+        if(currentAmmo - AmmoUsage >= 0) 
+        {
+            currentAmmo -= AmmoUsage;
+        }
+        else 
+        {
+            currentAmmo = 0;
+        }
+        
         float RandomRecoil = Random.Range(-RecoilAmount, RecoilAmount);
-        AS.Play();
-        CinemachineShake.Instance.ShakeCamera(3 * PlayerPrefs.GetFloat("ShakeIntensity"), 0.5f);
+        CinemachineShake.Instance.ShakeCamera(ShakeAmount * PlayerPrefs.GetFloat("ShakeIntensity"), 0.5f);
 
         GameObject a = Instantiate(Bullet,FirePoint.position,Quaternion.identity);
         Rigidbody2D rb = a.GetComponent<Rigidbody2D>();
@@ -106,7 +138,9 @@ public class Gun : MonoBehaviour
         
        
         a.GetComponent<Bullet>().dir = Player.transform.localRotation.eulerAngles;
+        a.GetComponent<Bullet>().KnockBackDir = a.transform.position - transform.position;
 
         Destroy(a,BulletTime);
+        //Gunshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

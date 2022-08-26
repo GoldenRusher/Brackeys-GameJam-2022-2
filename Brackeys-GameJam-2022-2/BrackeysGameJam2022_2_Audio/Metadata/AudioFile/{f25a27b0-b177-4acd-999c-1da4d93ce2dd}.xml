@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f25a27b0-b177-4acd-999c-1da4d93ce2dd}">
+		<property name="assetPath">
+			<value>SniperReload [2022-08-25 212109].wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2501587301587302</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dbe14b9e-2265-44b8-8770-e274f142bf5d}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{94b37aed-fab1-4686-a893-616983b86f0c}">
+		<property name="name">
+			<value>GunType</value>
+		</property>
+		<relationship name="folder">
+			<destination>{5b69700e-6522-431b-9a8f-f9e1293f4fc8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d1573372-ec90-44b4-aa91-929bc42217eb}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d1573372-ec90-44b4-aa91-929bc42217eb}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Pistol</value>
+			<value>Revolver</value>
+			<value>AutoRifle</value>
+			<value>SniperRifle</value>
+			<value>ShotGun</value>
+			<value>RayGun</value>
+			<value>LazerGun</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="automators">
+			<destination>{f1ffbd12-1935-4d32-9df7-99412414dcbe}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{f1ffbd12-1935-4d32-9df7-99412414dcbe}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+</objects>

@@ -1,5 +1,371 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8761306146936739269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Guns.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Guns.bank
+  Name: Guns
+  StudioPath: bank:/Guns
+  lastModified: 637970963401878736
+  FileSizes:
+  - Name: Desktop
+    Value: 274336
+  Exists: 1
+--- !u!114 &-7392040882538714323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/NightStart
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/NightStart
+  Guid:
+    Data1: -336590190
+    Data2: 1295036875
+    Data3: -610647659
+    Data4: 1046226979
+  Banks:
+  - {fileID: -2312786071582833557}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3436
+--- !u!114 &-6734827998346348075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GunReload/GunType
+  m_EditorClassIdentifier: 
+  Name: GunType
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 622173027
+    data2: 897445149
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Pistol
+  - Revolver
+  - AutoRifle
+  - SniperRifle
+  - ShotGun
+  - RayGun
+  - LazerGun
+  Exists: 1
+--- !u!114 &-6657676348945938994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Footstep
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Footstep
+  Guid:
+    Data1: 1105461009
+    Data2: 1113311820
+    Data3: -801133661
+    Data4: 1819525429
+  Banks:
+  - {fileID: -3361946038629473296}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-4807627513898166061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/GameStart
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/GameStart
+  Guid:
+    Data1: 262604291
+    Data2: 1218164356
+    Data3: -1037331563
+    Data4: -1262267113
+  Banks:
+  - {fileID: -2312786071582833557}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &-4556528644367361419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ZombieFootsteps/ZombieType
+  m_EditorClassIdentifier: 
+  Name: ZombieType
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1615095725
+    data2: 1725810588
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - NormalZombie
+  - SpecialZombie
+  Exists: 1
+--- !u!114 &-3957249065058591289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Guns/GunReload
+  m_EditorClassIdentifier: 
+  Path: event:/Guns/GunReload
+  Guid:
+    Data1: 1577507949
+    Data2: 1327661219
+    Data3: 308376223
+    Data4: -1446215457
+  Banks:
+  - {fileID: -8761306146936739269}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6734827998346348075}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3659401160666658866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Guns/EmptyFire
+  m_EditorClassIdentifier: 
+  Path: event:/Guns/EmptyFire
+  Guid:
+    Data1: 989816294
+    Data2: 1190925105
+    Data3: 744134304
+    Data4: 356303524
+  Banks:
+  - {fileID: -8761306146936739269}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 265
+--- !u!114 &-3361946038629473296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637970963401988680
+  FileSizes:
+  - Name: Desktop
+    Value: 1816
+  Exists: 1
+--- !u!114 &-2994948762657224268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637970963402488389
+  FileSizes:
+  - Name: Desktop
+    Value: 1516256
+  Exists: 1
+--- !u!114 &-2964552397968942485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637970963402108611
+  FileSizes:
+  - Name: Desktop
+    Value: 1874
+  Exists: 1
+--- !u!114 &-2571056968431692529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Menu.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Menu.bank
+  Name: Menu
+  StudioPath: bank:/Menu
+  lastModified: 637970963402218543
+  FileSizes:
+  - Name: Desktop
+    Value: 4416
+  Exists: 1
+--- !u!114 &-2506168451709278125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainTheme
+  Guid:
+    Data1: 1336960860
+    Data2: 1126555224
+    Data3: 688505479
+    Data4: -1575536946
+  Banks:
+  - {fileID: -2994948762657224268}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 120058
+--- !u!114 &-2312786071582833557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 637970963401728824
+  FileSizes:
+  - Name: Desktop
+    Value: 369888
+  Exists: 1
+--- !u!114 &-207922285400864420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ZombieHit/ZombieType
+  m_EditorClassIdentifier: 
+  Name: ZombieType
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1615095725
+    data2: 1725810588
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - NormalZombie
+  - SpecialZombie
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +378,379 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: -2964552397968942485}
+  - {fileID: -2312786071582833557}
+  - {fileID: -3361946038629473296}
+  - {fileID: -2571056968431692529}
+  - {fileID: -2994948762657224268}
+  - {fileID: 420352061793455993}
+  - {fileID: -8761306146936739269}
+  - {fileID: 2503425679563134509}
+  EditorEvents:
+  - {fileID: 4451479578611382809}
+  - {fileID: 4124979740043890097}
+  - {fileID: -2506168451709278125}
+  - {fileID: 8785160937361723985}
+  - {fileID: 3425993108417616144}
+  - {fileID: -4807627513898166061}
+  - {fileID: 7816496722346917788}
+  - {fileID: -7392040882538714323}
+  - {fileID: -3957249065058591289}
+  - {fileID: -3659401160666658866}
+  - {fileID: -6657676348945938994}
+  - {fileID: 1963023435212165158}
+  - {fileID: 7195773086471998099}
+  - {fileID: 7608723966179068130}
+  - {fileID: 3848619269027650175}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: -3361946038629473296}
+  StringsBanks:
+  - {fileID: -2964552397968942485}
+  cacheTime: 637970963402748240
   cacheVersion: 131591
+--- !u!114 &420352061793455993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Player.bank
+  Name: Player
+  StudioPath: bank:/Player
+  lastModified: 637970963402618317
+  FileSizes:
+  - Name: Desktop
+    Value: 90912
+  Exists: 1
+--- !u!114 &1963023435212165158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/PlayerHit
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerHit
+  Guid:
+    Data1: -2138286986
+    Data2: 1294768135
+    Data3: -932185160
+    Data4: -460213831
+  Banks:
+  - {fileID: 420352061793455993}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2503425679563134509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Zombie.bank
+  m_EditorClassIdentifier: 
+  Path: BrackeysGameJam2022_2_Audio/Build/Desktop/Zombie.bank
+  Name: Zombie
+  StudioPath: bank:/Zombie
+  lastModified: 637970963402748240
+  FileSizes:
+  - Name: Desktop
+    Value: 91488
+  Exists: 1
+--- !u!114 &3425993108417616144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/PlayerFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerFootsteps
+  Guid:
+    Data1: -785184058
+    Data2: 1312649527
+    Data3: 1421240714
+    Data4: -843333100
+  Banks:
+  - {fileID: 420352061793455993}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 950
+--- !u!114 &3837293397612811597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gunshot/GunType
+  m_EditorClassIdentifier: 
+  Name: GunType
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 622173027
+    data2: 897445149
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Pistol
+  - Revolver
+  - AutoRifle
+  - SniperRifle
+  - ShotGun
+  - RayGun
+  - LazerGun
+  Exists: 1
+--- !u!114 &3848619269027650175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Zombie/ZombieHit
+  m_EditorClassIdentifier: 
+  Path: event:/Zombie/ZombieHit
+  Guid:
+    Data1: -113107226
+    Data2: 1151702464
+    Data3: 280515223
+    Data4: -1174648473
+  Banks:
+  - {fileID: 2503425679563134509}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -207922285400864420}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4124979740043890097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu/MenuHover
+  m_EditorClassIdentifier: 
+  Path: event:/Menu/MenuHover
+  Guid:
+    Data1: -1755219839
+    Data2: 1162371905
+    Data3: -538063229
+    Data4: 718755335
+  Banks:
+  - {fileID: -2571056968431692529}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 359
+--- !u!114 &4451479578611382809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu/MenuClick
+  m_EditorClassIdentifier: 
+  Path: event:/Menu/MenuClick
+  Guid:
+    Data1: -1126736856
+    Data2: 1309748124
+    Data3: -1769550459
+    Data4: 1780954780
+  Banks:
+  - {fileID: -2571056968431692529}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 330
+--- !u!114 &6815383837985389014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ZombieMoan/ZombieType
+  m_EditorClassIdentifier: 
+  Name: ZombieType
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1615095725
+    data2: 1725810588
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - NormalZombie
+  - SpecialZombie
+  Exists: 1
+--- !u!114 &7195773086471998099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Zombie/ZombieMoan
+  m_EditorClassIdentifier: 
+  Path: event:/Zombie/ZombieMoan
+  Guid:
+    Data1: 1579120571
+    Data2: 1243083240
+    Data3: 352087991
+    Data4: 2050361689
+  Banks:
+  - {fileID: 2503425679563134509}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6815383837985389014}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7608723966179068130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Zombie/ZombieFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Zombie/ZombieFootsteps
+  Guid:
+    Data1: 147217108
+    Data2: 1219918915
+    Data3: -753195903
+    Data4: 1865452570
+  Banks:
+  - {fileID: 2503425679563134509}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4556528644367361419}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7816496722346917788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/BackgroundAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/BackgroundAmbience
+  Guid:
+    Data1: -1697438908
+    Data2: 1326164299
+    Data3: 1713264574
+    Data4: -840343321
+  Banks:
+  - {fileID: -2312786071582833557}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33492
+--- !u!114 &8785160937361723985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Guns/Gunshot
+  m_EditorClassIdentifier: 
+  Path: event:/Guns/Gunshot
+  Guid:
+    Data1: -493895294
+    Data2: 1251474050
+    Data3: 139829129
+    Data4: 2068529837
+  Banks:
+  - {fileID: -8761306146936739269}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3837293397612811597}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

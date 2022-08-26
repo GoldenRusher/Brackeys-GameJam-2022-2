@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
-
+using FMODUnity;
+using UnityEngine.UI;
 public class WaveManager : MonoBehaviour
 {
     [Header("ChangeColor")]
@@ -21,6 +22,7 @@ public class WaveManager : MonoBehaviour
     int Night;
 
     [Header("Spawning")]
+    public List<Enemy> Tier0enemies = new List<Enemy>();
     public List<Enemy> Tier1enemies = new List<Enemy>();
     public List<Enemy> Tier2enemies = new List<Enemy>();
     public List<Enemy> Tier3enemies = new List<Enemy>();
@@ -36,9 +38,25 @@ public class WaveManager : MonoBehaviour
     private float SpawnTimer;
 
     public static int DifficultyMultiplier = 1;
-    
+
+    public Text NightText;
+    public Text WaveText;
+
+    float NightT;
+    float WaveT;
+
+    public Color StartC;
+    public Color EndC;
+
+    [Header("Sound")]
+    public FMODUnity.EventReference WaveStart;
+    public FMODUnity.EventReference NightStart;
+    public FMODUnity.EventReference GameStart;
     private void Start()
     {
+        NightT = 1;
+        WaveT = 1;
+
         currentWave = 1;
         SpawnTimer = SpawnInterval;
         Night = 0;
@@ -67,6 +85,8 @@ public class WaveManager : MonoBehaviour
 
     public void StartNight() 
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(NightStart, gameObject);
+        NightT = 0;
         t = 0;
         isDay = false;
         currentWaveInNight = WavesinANight[Night];
@@ -75,7 +95,16 @@ public class WaveManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(t < 1) 
+        WaveT += Time.fixedDeltaTime;
+        NightT += Time.deltaTime;
+
+        NightText.text = "Night " + Night.ToString();
+        WaveText.text = "Wave " + currentWave.ToString();
+
+        NightText.color = Color.Lerp(StartC, EndC, NightT);
+        WaveText.color = Color.Lerp(StartC, EndC, WaveT);
+
+        if (t < 1) 
         {
             t += Time.deltaTime / duration;
         }
@@ -132,8 +161,18 @@ public class WaveManager : MonoBehaviour
 
     public void GenerateWave() 
     {
+        WaveT = 0;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(WaveStart, gameObject);
         CurrentEnemies.Clear();
-        waveValue = currentWave * 10 * DifficultyMultiplier;
+        if(DifficultyMultiplier > 1) 
+        {
+            waveValue = currentWave * 10 * DifficultyMultiplier / 2;
+        }
+        else 
+        {
+            waveValue = currentWave * 10;
+        }
+        
         GenerateEnemies();
     }
     public void GenerateEnemies() 
@@ -142,16 +181,67 @@ public class WaveManager : MonoBehaviour
 
         while(waveValue> 0) 
         {
-            int RandomEnemyID = Random.Range(0, Tier1enemies.Count);
-            int EnemyCost = Tier1enemies[RandomEnemyID].cost;
-            
-            if(waveValue-EnemyCost >= 0) 
+            if (currentWave <= 2)
             {
-                generatedEnemies.Add(Tier1enemies[RandomEnemyID].EnemyPrefab);
-                waveValue -= EnemyCost;
-            }else if(waveValue <= 0) 
+                int RandomEnemyID = Random.Range(0, Tier0enemies.Count);
+                int EnemyCost = Tier0enemies[RandomEnemyID].cost;
+
+                if (waveValue - EnemyCost >= 0)
+                {
+                    generatedEnemies.Add(Tier0enemies[RandomEnemyID].EnemyPrefab);
+                    waveValue -= EnemyCost;
+                }
+                else if (waveValue <= 0)
+                {
+                    break;
+                }
+            }
+            if (currentWave > 2) 
             {
-                break;
+                int RandomEnemyID = Random.Range(0, Tier1enemies.Count);
+                int EnemyCost = Tier1enemies[RandomEnemyID].cost;
+
+                if (waveValue - EnemyCost >= 0)
+                {
+                    generatedEnemies.Add(Tier1enemies[RandomEnemyID].EnemyPrefab);
+                    waveValue -= EnemyCost;
+                }
+                else if (waveValue <= 0)
+                {
+                    break;
+                }
+            }
+
+            if (currentWave > 7)
+            {
+                int RandomEnemyID = Random.Range(0, Tier2enemies.Count);
+                int EnemyCost = Tier2enemies[RandomEnemyID].cost;
+
+                if (waveValue - EnemyCost >= 0)
+                {
+                    generatedEnemies.Add(Tier2enemies[RandomEnemyID].EnemyPrefab);
+                    waveValue -= EnemyCost;
+                }
+                else if (waveValue <= 0)
+                {
+                    break;
+                }
+            }
+
+            if (currentWave > 15)
+            {
+                int RandomEnemyID = Random.Range(0, Tier2enemies.Count);
+                int EnemyCost = Tier2enemies[RandomEnemyID].cost;
+
+                if (waveValue - EnemyCost >= 0)
+                {
+                    generatedEnemies.Add(Tier2enemies[RandomEnemyID].EnemyPrefab);
+                    waveValue -= EnemyCost;
+                }
+                else if (waveValue <= 0)
+                {
+                    break;
+                }
             }
         }
         enemiesToSpawn.Clear();

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using FMOD;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer Main;
 
     public float SFXVol;
     public float MusicVol;
@@ -20,8 +20,16 @@ public class SettingsMenu : MonoBehaviour
     public Slider Master;
     public Toggle fsToggle;
 
+    FMOD.Studio.Bus masterBus;
+    FMOD.Studio.Bus SFXBus;
+    FMOD.Studio.Bus MusicBus;
+
     private void Start()
     {
+        //SFXBus = FMODUnity.RuntimeManager.GetBus("bus:/SoundFX");
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+
         SFXVol = PlayerPrefs.GetFloat("SFXVolume");
         MusicVol = PlayerPrefs.GetFloat("MusicVolume");
         MasterVol = PlayerPrefs.GetFloat("MasterVolume");
@@ -41,26 +49,27 @@ public class SettingsMenu : MonoBehaviour
         Shake.value = ShakeInt;
         fsToggle.isOn = fullScreen;
 
-        Main.SetFloat("SFXvol", SFXVol);
-        Main.SetFloat("MusicVol", MusicVol);
-        Main.SetFloat("MasterVol", MasterVol);
+        SFXBus.setVolume(SFXVol);
+        MusicBus.setVolume(MusicVol);
+        masterBus.setVolume(MasterVol);
+
         Screen.fullScreen = fullScreen;
     }
 
     public void SetSFXVolume(float volume) 
     {
-        Main.SetFloat("SFXvol", volume);
+        SFXBus.setVolume(volume);
         SFXVol = volume;
     }
     public void SetMusicVolume(float volume)
     {
-        Main.SetFloat("MusicVol", volume);
+        MusicBus.setVolume(volume);
         MusicVol = volume;
     }
     public void SetMainVolume(float volume)
     {
-       Main.SetFloat("MasterVol", volume);
-       MasterVol = volume;
+        masterBus.setVolume(volume);
+        MasterVol = volume;
     }
     public void SetShakeInt(float Int) 
     {

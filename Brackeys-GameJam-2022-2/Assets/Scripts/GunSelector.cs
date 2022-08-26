@@ -40,7 +40,15 @@ public class GunSelector : MonoBehaviour
         {
             AmmoDisplay.SetActive(true);
             AmmoSupply.text = PI.Ammo.ToString();
-            AmmoText.text = CurrentGun.GetComponent<GunInfo>().UsingGun.GetComponent<Gun>().currentAmmo.ToString() + " / " + CurrentGun.GetComponent<GunInfo>().UsingGun.GetComponent<Gun>().AmmoCapacity.ToString();
+            if(CurrentGun.GetComponent<GunInfo>().UsingGun.GetComponent<Gun>() == null) 
+            {
+                AmmoText.text = CurrentGun.GetComponent<GunInfo>().UsingGun.GetComponent<ShotGun>().currentAmmo.ToString() + " / " + CurrentGun.GetComponent<GunInfo>().UsingGun.GetComponent<ShotGun>().AmmoCapacity.ToString();
+            }
+            else 
+            {
+                AmmoText.text = CurrentGun.GetComponent<GunInfo>().UsingGun.GetComponent<Gun>().currentAmmo.ToString() + " / " + CurrentGun.GetComponent<GunInfo>().UsingGun.GetComponent<Gun>().AmmoCapacity.ToString();
+            }
+            
             CurrentGun.SetActive(true);
             if (CurrentGun.GetComponent<GunInfo>().ShortGun) 
             {

@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public void TutorialNow() 
+    {
+        StartCoroutine(Tutorial());
+    }
     public void Play() 
     {
         StartCoroutine(PlayNow());
@@ -26,6 +29,12 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(1);
+    }
+
+    IEnumerator Tutorial()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(2);
     }
 
 }

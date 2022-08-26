@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{969efdaf-68e5-45e8-9b3b-65b7491f8cd7}">
+		<property name="assetPath">
+			<value>Pistol Rec 1 [2022-08-24 140427].wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dbe14b9e-2265-44b8-8770-e274f142bf5d}</destination>
+		</relationship>
+	</object>
+</objects>

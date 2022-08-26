@@ -43,11 +43,19 @@ public class ShopUI : MonoBehaviour
 
         ShopChoices[CurrentShopPoint].SetActive(true);
         ShopChoices[CurrentShopPoint + 1].SetActive(true);
-        ShopChoices[CurrentShopPoint + 2].SetActive(true);
+
+        if(CurrentShopPoint + 2 <= ShopChoices.Length - 1) 
+        {
+            ShopChoices[CurrentShopPoint + 2].SetActive(true);
+        }
+        
 
         ShopChoices[CurrentShopPoint].transform.position = ShopPoints[0].transform.position;
         ShopChoices[CurrentShopPoint + 1].transform.position = ShopPoints[1].transform.position;
-        ShopChoices[CurrentShopPoint + 2].transform.position = ShopPoints[2].transform.position;
+        if (CurrentShopPoint + 2 <= ShopChoices.Length - 1)
+        {
+            ShopChoices[CurrentShopPoint + 2].transform.position = ShopPoints[2].transform.position;
+        }
     }
 
     public void GoLeft() 

@@ -17,10 +17,13 @@ public class Items : MonoBehaviour
     float distance;
 
     Rigidbody2D rb;
+    Points pointsManager;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        pointsManager = GameObject.FindGameObjectWithTag("PointsManager").gameObject.GetComponent<Points>();
     }
     private void FixedUpdate()
     {
@@ -70,9 +73,11 @@ public class Items : MonoBehaviour
             }else if(Type == 2) 
             {
                 inv.AddScrap(Amount);
+                pointsManager.AddScrap(Amount);
             }else if (Type == 3) 
             {
                 inv.AddMed(Amount);
+                pointsManager.AddMeds(Amount);
             }
             Destroy(this.gameObject);
         }

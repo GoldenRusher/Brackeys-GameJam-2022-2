@@ -7,12 +7,10 @@ public class PauseManager : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject Player;
     public bool IsPaused;
-    public GameObject Inv;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && IsPaused == false) 
         {
-            Inv.SetActive(true);
             PauseMenu.SetActive(true);
             Player.SetActive(false);
             StartCoroutine(PauseNow());
@@ -26,7 +24,6 @@ public class PauseManager : MonoBehaviour
     public void UpPause() 
     {
         IsPaused = false;
-        Inv.SetActive(false);
         PauseMenu.SetActive(false);
         Player.SetActive(true);
         Time.timeScale = 1;
